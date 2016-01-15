@@ -17,3 +17,11 @@ Features:
 - string-to-number, int and double
 - number-to-string, int and double
 - includes parsing and null tests
+
+**Collections**
+
+Introduction to a generic List<T> collection.
+
+Features:
+- it's a console app
+- collections of strings, numbers, and objects
