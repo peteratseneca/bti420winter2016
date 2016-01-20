@@ -196,8 +196,9 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-*.mdf
-*.ldf
+# edited/changed on Jan 20 2016
+#*.mdf
+#*.ldf
 
 # Business Intelligence projects
 *.rdl.data
