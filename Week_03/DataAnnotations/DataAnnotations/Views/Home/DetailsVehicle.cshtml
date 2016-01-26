@@ -1,0 +1,82 @@
+﻿@model DataAnnotations.Controllers.VehicleAdd
+
+@{
+    ViewBag.Title = "Vehicle details";
+}
+
+<h2>Vehicle details</h2>
+
+<div>
+    @*<h4>VehicleAdd</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrimLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrimLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumptionCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumptionCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumptionHighway)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumptionHighway)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>
