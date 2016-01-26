@@ -66,11 +66,8 @@ namespace GetAllGetOne.Controllers
         [HttpPost]
         public ActionResult SearchByName(SearchByName item)
         {
-            // Fetch the collection
-            var c = m.CustomerGetAllByName(item.Name);
-
-            // Pass the collection to the view, sorted
-            return View("index", c.OrderBy(ln => ln.LastName).ThenBy(fn => fn.FirstName));
+            // Fetch the sorted collection, and pass it to the view
+            return View("index", m.CustomerGetAllByName(item.Name));
         }
 
         // GET: Customers/Details/5
