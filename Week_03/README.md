@@ -15,5 +15,5 @@ Two scenarios that will help you learn how to use data annotations on view model
 
 Features:
 - commonly-used data annotations on view model classes
-- one scenario covers typical text and number properties
-- the other scenario covers some more interesting situations
+- one scenario covers typical text and number properties (vehicles)
+- the other scenario covers some more interesting situations (accounts)
