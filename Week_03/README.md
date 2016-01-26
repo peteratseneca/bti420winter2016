@@ -17,3 +17,12 @@ Features:
 - commonly-used data annotations on view model classes
 - one scenario covers typical text and number properties (vehicles)
 - the other scenario covers some more interesting situations (accounts)
+
+**LINQIntroduction**
+
+Shows the commonly-used LINQ features, with the Customers collection.  
+
+Features:
+- commonly-used SingleOrDefault, Where, and OrderBy
+- includes a few other examples
+- also shows a search strategy, for the Customers collection
