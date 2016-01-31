@@ -1,0 +1,85 @@
+﻿@model AssocOneToMany.Controllers.TeamWithPlayers
+
+@{
+    ViewBag.Title = "Team details, with list of players";
+}
+
+<h2>Team details, with list of players</h2>
+
+<div>
+    @*<h4>TeamWithPlayers</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearFounded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearFounded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Division)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Division)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stadium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stadium)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Players)
+        </dt>
+
+        <dd>
+            @foreach (var p in Model.Players)
+            {
+                var player = string.Format("{0} ({1}), # {2}", p.PlayerName, p.Position, p.UniformNumber);
+                <span>@player</span><br />
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to List", "Index")    
+</p>

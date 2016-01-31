@@ -1,0 +1,75 @@
+﻿@model AssocOneToMany.Controllers.TeamBase
+
+@{
+    ViewBag.Title = "Team details (base)";
+}
+
+<h2>Team details (base)</h2>
+
+<div>
+    @*<h4>TeamBase</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearFounded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearFounded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Division)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Division)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stadium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stadium)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Include a list of players", "DetailsWithPlayers", new { id = Model.Id })
+</p>

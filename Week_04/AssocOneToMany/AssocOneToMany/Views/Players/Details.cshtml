@@ -1,0 +1,82 @@
+﻿@model AssocOneToMany.Controllers.PlayerBase
+
+@{
+    ViewBag.Title = "Player details (base)";
+}
+
+<h2>Player details (base)</h2>
+
+<div>
+    <h4>PlayerBase</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UniformNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UniformNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearsExperience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearsExperience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.College)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.College)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
