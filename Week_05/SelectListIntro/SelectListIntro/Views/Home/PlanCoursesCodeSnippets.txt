@@ -1,0 +1,12 @@
+﻿
+Using a multiple-selection listbox 
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourseList, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBox("CourseIds", Model.CourseList, htmlAttributes: new { @class = "form-control col-md-2", @size = 10 })
+                @Html.ValidationMessageFor(model => model.CourseList, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HTMLFormFoundations.Controllers.Teacher>
+
+@{
+    ViewBag.Title = "Radio Check Object";
+}
+
+<h2>Radio Check Object</h2>
+
+<p>This page has radios and checkboxes.<br />A collection of objects will be used to render the items.</p>
+<hr />
+
+<form action="http://postform.azurewebsites.net/home/test" method="post">
+
+    <!-- Hand-edited radio button group -->
+    <p>Size:</p>
+    <p>
+        <label><input type="radio" name="SizeId" value="6" />Small &nbsp;&nbsp;</label>
+        <label><input type="radio" name="SizeId" value="37" />Medium &nbsp;&nbsp;</label>
+        <label><input type="radio" name="SizeId" value="78" />Large &nbsp;&nbsp;</label>
+    </p>
+
+    <!-- Use the passed-in collection to render a radio button group -->
+    <p>Teacher:</p>
+    <p>
+        @foreach (var teacher in Model)
+            {
+                <!-- If you surround the input element with a label element, both are clickable -->
+                <label><input type="radio" name="TeacherRBGId" value="@teacher.Id" />@teacher.Name &nbsp;&nbsp;</label>
+            }
+    </p>
+
+    <!-- Use the passed-in collection to render a checkbox group -->
+    <p>Teachers:</p>
+    <p>
+        @foreach (var teacher in Model)
+            {
+                <!-- If you surround the input element with a label element, both are clickable -->
+                <label><input type="checkbox" name="TeacherCBGIds" value="@teacher.Id" />@teacher.Name &nbsp;&nbsp;</label>
+            }
+    </p>
+
+    <p><input type="submit" value="Login" /></p>
+
+</form>

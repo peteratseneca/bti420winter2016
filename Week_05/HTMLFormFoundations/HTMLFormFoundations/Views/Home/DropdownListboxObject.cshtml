@@ -1,0 +1,62 @@
+﻿@model IEnumerable<HTMLFormFoundations.Controllers.Teacher>
+
+@{
+    ViewBag.Title = "Dropdown Listbox Object";
+}
+
+<h2>Dropdown Listbox Object</h2>
+
+<p>This page has item-selection controls.<br />A collection of objects will be used to render the items.</p>
+<hr />
+
+<form action="http://postform.azurewebsites.net/home/test" method="post">
+
+    <!-- Do you want to POST the visible text, instead of the value? -->
+    <!-- If yes, then simply remove the value attribute -->
+
+    <!-- Hand-edited simple dropdown control -->
+    <p>
+        Size:
+        <select name="Size">
+            <option value="6">Small</option>
+            <option value="37">Medium</option>
+            <option value="78">Large</option>
+        </select>
+    </p>
+
+    <!-- Use the passed-in collection to render a dropdown control -->
+    <p>
+        Teacher:
+        <select name="TeacherDDLId">
+            @foreach (var teacher in Model)
+            {
+                <option value="@teacher.Id">@teacher.Name</option>
+            }
+        </select>
+    </p>
+
+    <!-- Use the passed-in collection to render a listbox control -->
+    <p>
+        Teacher (single item select):
+        <select name="TeacherLBSId" size="@Model.Count()">
+            @foreach (var teacher in Model)
+            {
+                <option value="@teacher.Id">@teacher.Name</option>
+            }
+        </select>
+    </p>
+
+    <!-- Use the passed-in collection to render a multi-select listbox control -->
+    <p>
+        Teachers (multi item select):
+        <select name="TeacherLBMIds" size="@Model.Count()" multiple>
+            @foreach (var teacher in Model)
+            {
+                <option value="@teacher.Id">@teacher.Name</option>
+            }
+        </select>
+    </p>
+
+    <p><input type="submit" value="Login" /></p>
+
+</form>

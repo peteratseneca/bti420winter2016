@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Simple Input";
+}
+
+<h2>Simple Input</h2>
+
+<p>This page has simple input fields.</p>
+<hr />
+
+<form action="http://postform.azurewebsites.net/home/test" method="post">
+
+    <p>User name: <input name="Username" autofocus /></p>
+
+    <p>Age: <input type="number" name="Age" /></p>
+
+    <p>Password: <input type="password" name="Password" /></p>
+
+    <p><input type="submit" value="Login" /></p>
+
+</form>

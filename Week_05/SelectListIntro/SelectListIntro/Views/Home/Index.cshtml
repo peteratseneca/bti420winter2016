@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>SelectList Introduction</h1>
+    <p class="lead">Learn more about the add and edit patterns that use a "...Form" view model class. Get an introduction to the very useful SelectList class.</p>
+    <p><a href="http://petermcintyre.com/bti420/notes/feb10/" target="_blank" class="btn btn-primary btn-lg">More info &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>The add and edit patterns work best when using a specialized view model class to help build the form. We refer to this as a "...Form" view model class, because we usually append "Form" to the end of the name.</p>
+    </div>
+    <div class="col-md-8">
+        <h2>Understanding SelectList</h2>
+        <p>A SelectList object is a package of data that helps you build an item-selection control in an HTML Form.</p>
+        <p>Here's how you create and use a SelectList:</p>
+        <ol>
+            <li>Get/fetch/prepare the collection of items that will appear in the control.</li>
+            <li>Ensure that you are using a "...Form" view model class, which has a SelectList property (name format is "...List").</li>
+            <li>You must also have a second view model class, to describe the shape of the data that will be posted back by the browser user.</li>
+            <li>In the controller method, create a "...Form" object.</li>
+            <li>Configure its SelectList property with the collection, <u>and</u> the property names that will be used by the HTML "value" and "text" attributes.</li>
+            <li>Send to the view.</li>
+            <li>In the view, use the SelectList object in the HTML item-selection control.</li>
+            <li>Ensure that the "name" attribute matches the property name in the post-back view model class.</li>
+        </ol>
+    </div>
+</div>

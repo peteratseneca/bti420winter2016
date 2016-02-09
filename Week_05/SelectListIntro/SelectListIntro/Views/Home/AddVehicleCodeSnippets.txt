@@ -1,0 +1,30 @@
+﻿
+Using a foreach loop to render a dropdown list
+
+        <div class="form-group">
+            <label for="ManufacturerList" class="control-label col-md-2">Manufacturer List</label>
+            <div class="col-md-10">
+                <select name="ManufacturerId" class="form-control">
+                    @foreach (var item in Model.ManufacturerList)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.ManufacturerList, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+Using a foreach loop to render a radio button group
+
+        <div class="form-group">
+            <label for="ManufacturerList" class="control-label col-md-2">Manufacturer List</label>
+            <div class="col-md-10">
+                @foreach (var item in Model.ManufacturerList)
+                {
+                    <div class="radio">
+                        <label><input type="radio" name="ManufacturerId" value="@item.Value" />@item.Text</label>
+                    </div>
+                }
+                @Html.ValidationMessageFor(model => model.ManufacturerList, "", new { @class = "text-danger" })
+            </div>
+        </div>

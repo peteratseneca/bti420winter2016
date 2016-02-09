@@ -1,0 +1,59 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Dropdown Listbox Simple";
+}
+
+<h2>Dropdown Listbox Simple</h2>
+
+<p>This page has item-selection controls.<br />A collection of strings will be used to render the items.</p>
+<hr />
+
+<form action="http://postform.azurewebsites.net/home/test" method="post">
+
+    <!-- Hand-edited simple dropdown control -->
+    <p>
+        Size:
+        <select name="Size">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+        </select>
+    </p>
+
+    <!-- Use the passed-in collection to render a dropdown control -->
+    <p>
+        Colour:
+        <select name="ColourDDL">
+            @foreach (var colour in Model)
+            {
+                <option>@colour</option>
+            }
+        </select>
+    </p>
+
+    <!-- Use the passed-in collection to render a listbox control -->
+    <p>
+        Colour (single item select):
+        <select name="ColourLBS" size="@Model.Count()">
+            @foreach (var colour in Model)
+            {
+                <option>@colour</option>
+            }
+        </select>
+    </p>
+
+    <!-- Use the passed-in collection to render a multi-select listbox control -->
+    <p>
+        Colours (multi item select):
+        <select name="ColourLBM" size="@Model.Count()" multiple>
+            @foreach (var colour in Model)
+            {
+                <option>@colour</option>
+            }
+        </select>
+    </p>
+
+    <p><input type="submit" value="Login" /></p>
+
+</form>
