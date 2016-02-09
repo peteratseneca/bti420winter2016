@@ -1,5 +1,7 @@
 ### Week 5 code examples
 
+Use the Visual Studio "Task List", and look for the "Attention" comment tokens.  
+
 **HTMLFormFoundations**
 
 Introduces you to the foundations for building rich HTML Forms.  
