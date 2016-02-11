@@ -1,0 +1,80 @@
+﻿@model AssocAddEdit.Controllers.VehicleWithDetail
+
+@{
+    ViewBag.Title = "Delete vehicle";
+}
+
+<h2>Delete vehicle</h2>
+
+<h3>Are you sure you want to delete this item?</h3>
+<div>
+    @*<h4>VehicleWithDetail</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSRP)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ManufacturerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturerId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufacturerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufacturerCountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturerCountryName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

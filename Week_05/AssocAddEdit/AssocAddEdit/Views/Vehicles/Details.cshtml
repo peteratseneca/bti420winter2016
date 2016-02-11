@@ -1,0 +1,66 @@
+﻿@model AssocAddEdit.Controllers.VehicleWithDetail
+
+@{
+    ViewBag.Title = "Vehicle details";
+}
+
+<h2>Vehicle with details</h2>
+
+<div>
+    @*<h4>VehicleWithDetail</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSRP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufacturerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufacturerCountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturerCountryName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
