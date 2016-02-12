@@ -217,7 +217,6 @@
     <Content Include="Views\Manufacturers\Index.cshtml" />
     <Content Include="Views\Vehicles\Index.cshtml" />
     <Content Include="Views\Manufacturers\Details.cshtml" />
-    <Content Include="Views\Manufacturers\Create-old.cshtml" />
     <Content Include="Views\Manufacturers\AddVehicle.cshtml" />
     <Content Include="Views\Vehicles\Details.cshtml" />
     <Content Include="Views\Vehicles\Create.cshtml" />

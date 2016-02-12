@@ -30,7 +30,7 @@ namespace AssocAddEdit.Controllers
         public int MSRP { get; set; }
 
         // Attention - Identifier for the associated item
-        [Required]
+        [Range(1, Int32.MaxValue)]
         public int ManufacturerId { get; set; }
     }
 
