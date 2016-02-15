@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Associations self</h1>
+    <p class="lead">Some entities can have "self" associations. Learn how to work with them.</p>
+    <p><a href="http://petermcintyre.com/bti420/notes/feb17/" target="_blank" class="btn btn-primary btn-lg">More info &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>Some entities can have "self" assocations.</p>
+        <p>This app's "Employee" entity has two self-referencing assocations:</p>
+        <ol>
+            <li>To-one, used to indicate the supervisor (or boss/manager)</li>
+            <li>To-many, used to indicate the collection of direct-reports</li>
+        </ol>
+    </div>
+    <div class="col-md-4">
+        <h2>Self-referencing to-one</h2>
+        <p>In the design model class, this association REQUIRES two properties:</p>
+        <ol>
+            <li>A property of the same type, to hold the associated object reference</li>
+            <li>A nullable int, to hold the identifier of the associated object</li>
+        </ol>
+        <p>This approach is both REQUIRED and is a best practice for ASP.NET MVC web apps that use Entity Framework for data persistence.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Self-referencing to-many</h2>
+        <p>Configuring this association is exactly the same as configuring any other to-many association.</p>
+    </div>
+</div>

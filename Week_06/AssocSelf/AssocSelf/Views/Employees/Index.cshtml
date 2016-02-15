@@ -1,0 +1,91 @@
+﻿@model IEnumerable<AssocSelf.Controllers.EmployeeWithOrgInfo>
+
+@{
+    ViewBag.Title = "Employee list";
+}
+
+<h2>Employee list</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Employee name
+        </th>
+        <th>
+            Dates
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            Numbers
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportsTo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ var name = string.Format("{0}, {1}", item.LastName, item.FirstName); }
+                <b>@name</b><br />
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @{
+                    var niceDate = "";
+                    if (item.BirthDate.HasValue)
+                    {
+                        niceDate = item.BirthDate.GetValueOrDefault().ToShortDateString();
+                    }
+                }
+                Birth: @niceDate<br />
+                @{
+                    niceDate = "";
+                    if (item.HireDate.HasValue)
+                    {
+                        niceDate = item.HireDate.GetValueOrDefault().ToShortDateString();
+                    }
+                }
+                Hire: @niceDate
+            </td>
+            <td>
+                @{ var addr = string.Format("{0}<br />{1} {2} {3}<br />{4}", item.Address, item.City, item.State, item.PostalCode, item.Country);}
+                @Html.Raw(addr)
+            </td>
+            <td>
+                T: @Html.DisplayFor(modelItem => item.Phone)<br />
+                F: @Html.DisplayFor(modelItem => item.Fax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @{
+                    var boss = "";
+                    // Validate that there's an associated object
+                    if (item.Employee2 != null)
+                    {
+                        boss = string.Format("{0}, {1}", item.Employee2.LastName, item.Employee2.FirstName);
+                    }
+                }
+                @boss
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.EmployeeId }, htmlAttributes: new { @class = "btn btn-default btn-xs btn-block", @role = "button" })@*<br />
+                @Html.ActionLink("Edit supervisor", "EditSupervisor", new { id = item.EmployeeId }, htmlAttributes: new { @class = "btn btn-primary btn-xs btn-block", @role = "button" })*@
+                 @*| @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeId })*@
+            </td>
+        </tr>
+                    }
+
+</table>
