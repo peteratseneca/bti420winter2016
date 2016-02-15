@@ -1,0 +1,54 @@
+﻿@model AssocManyToMany.Controllers.EmployeeWithJobDuties
+
+@{
+    ViewBag.Title = "Employee with details";
+}
+
+<h2>Employee with details</h2>
+
+<div>
+    @*<h4>EmployeeWithJobDuties</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Office)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Office)
+        </dd>
+
+        <!-- new content -->
+
+        <dt></dt>
+        <dd><hr /></dd>
+
+        <dt>Job duties</dt>
+
+        <dd>
+            @if (Model.JobDuties.Count() > 0)
+            {
+                foreach (var jd in Model.JobDuties)
+                {
+                    <span>@jd.Name</span><br />
+                }
+            }
+            else
+            {
+                <span>(none)</span>
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EmployeeAndJobDuties", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "ByEmployee")
+</p>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AssocManyToMany.Controllers.JobDutyWithEmployees>
+
+@{
+    ViewBag.Title = "List of job duties";
+}
+
+<h2>List of job duties</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            Employees with this job duty
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @if (item.Employees.Count() > 0)
+            {
+                var e = string.Join("<br />", item.Employees.Select(en => en.Name));
+                @Html.Raw(e);
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit employees", "JobDutyAndEmployees", new { id=item.Id }) |
+            @Html.ActionLink("Details", "ByJobDutyWithEmployees", new { id=item.Id }) @*|
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+        </td>
+    </tr>
+}
+
+</table>
