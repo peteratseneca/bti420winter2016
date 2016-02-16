@@ -139,6 +139,14 @@ namespace AssocSelf.Controllers
                 // Create a form, based on the fetched matching object
                 var form = AutoMapper.Mapper.Map<EmployeeEditDirectReportsForm>(o);
 
+                // Fetch the employees into a temporary collection
+                // Logically, an employee cannot select "self" as a direct report
+                // Therefore, we will remove the employee-being-edited from the collection
+                // We must use a concrete collection type, to be able to use the Remove() method
+                List<EmployeeBase> employees = m.EmployeeGetAll().ToList();
+                var thisEmployee = employees.SingleOrDefault(e => e.EmployeeId == o.EmployeeId);
+                employees.Remove(thisEmployee);
+
                 // For the multi select list, configure the "selected" items
                 // Notice the use of the Select() method, 
                 // which allows us to select/return/use only some properties from the source
@@ -149,7 +157,7 @@ namespace AssocSelf.Controllers
 
                 // For clarity, use the named parameter feature of C#
                 form.EmployeeList = new MultiSelectList
-                    (items: m.EmployeeGetAll(),
+                    (items: employees,
                     dataValueField: "EmployeeId",
                     dataTextField: "FullName",
                     selectedValues: selectedValues);
