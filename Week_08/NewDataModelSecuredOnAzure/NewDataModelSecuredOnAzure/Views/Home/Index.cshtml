@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>New data model, secured, on Azure</h1>
+    <p class="lead">Custom data model, security-aware web app, hosted on Azure.</p>
+    <p><a href="http://petermcintyre.com/bti420/notes/mar09/" target="_blank" class="btn btn-primary btn-lg">More info &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>The problem domain is the automotive industry:</p>
+        <ul>
+            <li>Country entity, has many...</li>
+            <li>Manufacturer entities, has many...</li>
+            <li>Vehicle entities</li>
+        </ul>
+        <p>This is based on the ideas in the "AssocAddEdit" code example from Week 5.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>New in this app</h2>
+        <p>It is a security-aware app.</p>
+        <p>This means that you must register for a new user account, and use it to perform certain vehicle-related tasks.</p>
+        <p>Study the code in the Manufacturers and Vehicles controllers, to learn how role claims are used to control access to actions/methods.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Other info</h2>
+        <p>The app programmatically creates data. Study the Manager class, and the LoadData controller to learn more.</p>
+        <p>The app was published to Azure, so it's on the web for public use.</p>
+    </div>
+</div>
