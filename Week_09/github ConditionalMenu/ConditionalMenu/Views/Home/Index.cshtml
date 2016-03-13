@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    // Attention - Notice the following
+    var userAccount = new ConditionalMenu.Controllers.UserAccount(User as System.Security.Claims.ClaimsPrincipal);
+}
+
+<div class="jumbotron">
+    <h1>Conditional menus</h1>
+    <p class="lead">Security-aware menus and views.</p>
+    <p><a href="http://petermcintyre.com/bti420/notes/mar16/" target="_blank" class="btn btn-primary btn-lg">More info &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>There are two user accounts in this app (you can add more if you wish); both have the standard initial password.</p>
+        <ol>
+            <li>admin@example.com</li>
+            <li>peter@example.com</li>
+        </ol>
+        <p>The "admin" user account has the Admin role claim, but "peter" does not. Login as each user to see the menu etc. differences.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Conditional menus</h2>
+        <p>A <b>Dropdown for all users</b> menu has been created, in the _Layout.cshtml source code file.</p>
+        <p>An <b>Account info</b> menu appears only if the request is authenticated.</p>
+        <p>A <b>Role One task</b> menu appears if the authenticated security principal has the "RoleOne" role claim.</p>
+        <p>Finally, if the request is athenticated and has the Admin role claim, the <b>Admin tasks</b> dropdown menu appears.</p>
+    </div>
+    <div class="col-md-4 well well-sm">
+        <h2>@userAccount.NamesFirstLast</h2>
+        <p>Here's some info about this request's security principal:</p>
+        <dl>
+            <dt>Is authenticated?</dt>
+            <dd>@(Request.IsAuthenticated ? "Yes" : "No")</dd>
+            <dt>User name</dt>
+            <dd>@userAccount.Name</dd>
+            <dt>Has the Admin role claim?</dt>
+            <dd>@(userAccount.IsAdmin ? "Yes" : "No")</dd>
+            <dt>Role claims</dt>
+            <dd>
+                @if (userAccount.RoleClaims.Count() == 0)
+                {
+                    <span>(none)</span><br />
+                }
+                @foreach (var item in userAccount.RoleClaims)
+            {
+                <span>@item</span><br />
+            }
+        </dd>
+        <dt>Given name(s)</dt>
+        <dd>@userAccount.GivenName</dd>
+        <dt>Surname</dt>
+        <dd>@userAccount.Surname</dd>
+    </dl>
+</div>
+</div>

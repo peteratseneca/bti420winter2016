@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Conditional menus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @{ 
+        var userAccount = new ConditionalMenu.Controllers.UserAccount(User as System.Security.Claims.ClaimsPrincipal);
+    }
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Conditional menus", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown for all users <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Achieve world peace</a></li>
+                            <li><a href="#">Cure cancer</a></li>
+                            <li><a href="#">Solve the hunger problem</a></li>
+                        </ul>
+                    </li>
+
+                    @if (userAccount.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Account info", "Home", "Index")</li>
+                    }
+
+                    @if (userAccount.IsAdmin)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin tasks <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">List of all users</a></li>
+                                <li><a href="#">Find user by name</a></li>
+                                <li><a href="#">Edit user info and claims</a></li>
+                            </ul>
+                        </li>
+                    }
+
+                    @if (userAccount.HasRoleClaim("RoleOne"))
+                    {
+                        <li>@Html.ActionLink(userAccount.GivenName + " task", "Home", "Index")</li>
+                    }
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - BTI420 and INT422 Faculty</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
