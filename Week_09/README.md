@@ -11,3 +11,19 @@ Features:
 - Conditional menu item, if authenticated
 - Conditional menu item, if authenticated with a specific claim
 - Conditional dropdown menu, if authenticated with the Admin role claim
+
+**ManageAccounts (beta! will be updated)**
+
+Manage user accounts.  
+
+Features:
+- Study the AccountManager controller
+- Enables list, find, edit, and delete, for user accounts
+
+**NotesApp**
+
+Work with private data.  
+
+Features:
+- Study the Manager class
+- Users can work with their own data only

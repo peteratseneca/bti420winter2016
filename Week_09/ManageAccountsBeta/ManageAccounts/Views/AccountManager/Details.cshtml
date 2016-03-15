@@ -1,0 +1,55 @@
+﻿@model ManageAccounts.Controllers.ApplicationUserDetail
+
+@{
+    ViewBag.Title = "Account details";
+
+    var AllRoles = string.Join(", ", Model.Roles);
+}
+
+<h2>Details For: <span class="bg-info">&nbsp;@(Model.UserName)&nbsp;</span></h2>
+
+<div>
+    @*<h4>AccountDetails</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            Friendly name
+        </dt>
+
+        <dd>
+            @string.Format("{0} {1}", Model.GivenName, Model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Claim Roles
+        </dt>
+
+        <dd>
+            @AllRoles
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

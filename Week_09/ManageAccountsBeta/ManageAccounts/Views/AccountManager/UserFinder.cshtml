@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "User Finder";
+}
+<h2>User Finder</h2>
+<h4>Enter all or part of a name, then click the Find button</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">User Finder</div>
+            <div class="panel-body">
+                @using (Ajax.BeginForm("FindUser", "AccountManager",
+            new AjaxOptions
+            {
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "GET",
+                //OnFailure = "findFailed",
+                UpdateTargetId = "findResults"
+            }))
+                {
+                    <div class="form-group">
+                        <input name="findString" class="form-control col-md-3" autofocus />&nbsp;
+                        <input type="submit" value="Find" class="btn btn-primary" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div id="findResults"></div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

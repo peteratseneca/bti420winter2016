@@ -1,0 +1,68 @@
+﻿@model ManageAccounts.Controllers.ApplicationUserEditForm
+
+<h2>Edit User Account <span class="bg-info">&nbsp;@(Model.UserName)&nbsp;</span></h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Press "Save Changes" button</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @autofocus = "autofocus" })
+            </div>
+        </div>
+
+        <!-- new block below -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.GivenName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.GivenName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Surname, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.RoleList, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                
+                <!-- render a checkbox group -->
+                @foreach (var item in Model.RoleList)
+                {
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="Roles" value="@item.Text" checked="@item.Selected" />@item.Text</label>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- removed this from the next div - col-md-offset-2 -->
+            <div class="col-md-10">
+                <input type="submit" value="Save changes" class="btn btn-default" />&nbsp;
+                @Html.ActionLink("Back to Details", "Details", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
