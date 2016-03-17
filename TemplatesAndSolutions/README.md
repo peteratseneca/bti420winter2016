@@ -1,5 +1,14 @@
 ### Templates and Solutions
 
+**Web app project V5**
+
+Includes topics covered in Week 9. Includes Chinook sample database.  
+
+Features:
+- Includes all features from the V3 template
+- Also includes the Chinook sample database
+- And many other small improvements
+
 **Web app project V3**
 
 Includes topics covered in Week 8.  
