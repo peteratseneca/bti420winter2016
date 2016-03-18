@@ -1,12 +1,12 @@
 ### Templates and Solutions
 
-**Web app project V5**
+**Web app project A8**
 
-Includes topics covered in Week 9. Includes Chinook sample database.  
+Use with Assignment 8.  
 
 Features:
 - Includes all features from the V3 template
-- Also includes the Chinook sample database
+- And design model classes for the app
 - And many other small improvements
 
 **Web app project V3**
