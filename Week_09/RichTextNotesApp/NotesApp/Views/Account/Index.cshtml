@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Account info";
+}
+
+<h2>Account info</h2>
+
+<p>
+    <strong>All user names in this web app:</strong>
+    @Html.Raw(ViewBag.UserNames)
+</p>
+<p>
+    <strong>Claims for the current user, not formatted:</strong><br />
+    @Html.Raw(ViewBag.Status)</p>
+<p>@Html.ActionLink("Go to a nicely-formatted view", "Details")</p>

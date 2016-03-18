@@ -27,3 +27,11 @@ Work with private data.
 Features:
 - Study the Manager class
 - Users can work with their own data only
+
+**RichTextNotesApp**
+
+Adds the ability to work with rich text.  
+
+Features:
+- Uses the CKEditor package to render a rich text editor
+- Minor changes in views and controllers
