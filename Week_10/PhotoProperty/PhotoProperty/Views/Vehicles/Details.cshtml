@@ -1,0 +1,68 @@
+﻿@model PhotoProperty.Controllers.VehicleBase
+
+@{
+    ViewBag.Title = "Vehicle details";
+}
+
+<h2>Vehicle details</h2>
+
+<div>
+    @*<h4>VehicleBase</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSRP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </dt>
+
+        <dd>
+            @{ var alt = $"{Model.ModelYear} {Model.Manufacturer} {Model.Model} {Model.Trim}"; }
+            <img src="/photo/@Model.Id" alt="@alt" title="@alt" class="img-responsive" />
+            @*@Html.DisplayFor(model => model.PhotoUrl)*@
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
