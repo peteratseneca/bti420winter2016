@@ -19,3 +19,7 @@ Features:
 - Add a photo to an existing object, uses a combo add/edit pattern
 - Custom details view, existing object, with its collection of photos
 - As a bonus feature, photo download is supported 
+
+**Sample audio clips**
+
+Can use these for Assignment 8.  
