@@ -1,0 +1,67 @@
+﻿@model PhotoEntity.Controllers.PropertyWithPhotoStringIds
+
+@{
+    ViewBag.Title = "Property details";
+}
+
+<h2>Property details</h2>
+
+<div>
+    @*<h4>PropertyWithPhotoStringIds</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+            <hr>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+            <hr>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+            <hr>
+        </dd>
+
+        <dt>
+            Photos
+        </dt>
+        <dd>
+            @if (Model.Photos.Count() == 0)
+            {
+                <span>(none)</span>
+            }
+            else
+            {
+                foreach (var item in Model.Photos)
+                {
+                    <div class="col-md-4 col-sm-5 col-xs-10">
+                        <span>@item.Caption</span><br>
+                        <img src="~/photo/@item.StringId" alt="@item.Caption" title="@item.Caption" class="img-responsive img-rounded">
+                    </div>
+                }
+            }
+            <hr>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    <a href="~/properties/index">Back to list</a> |
+    @Html.ActionLink("Add photo", "AddPhoto", new { id = Model.Id })
+</p>

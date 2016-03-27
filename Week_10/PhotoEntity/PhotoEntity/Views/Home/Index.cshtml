@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Photo Entity</h1>
+    <p class="lead">Dedicated media type entity. Properties (houses) for sale, and photos.</p>
+    <p><a href="http://petermcintyre.com/bti420/notes/mar25-mar28/" target="_blank" class="btn btn-primary btn-lg">More info &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>A for-sale property (house, condo, etc.) can be added.</p>
+        <p>After adding, one or more photos can be added for that property.</p>
+        <p>This web app has two "details" views, plain, and with photos.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Do these tasks</h2>
+        <p>Review the Attention comment tokens on the Visual Studio task list.</p>
+        <p>Sample data was added to the web app by using the <a href="http://remax.ca/on/ajax-real-estate/" target="_blank">RE/MAX web site</a> for Ajax, Ontario.</p>
+        <p>Add more data to the web app yourself.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>More info</h2>
+        <p>When a photo is uploaded, a unique string identifier is created and saved with the photo.</p>
+        <p>The Photo controller uses this to locate the photo.</p>
+        <p>Therefore, the URL for a photo looks like the following:<br>http://localhost:51655/photo/<u>2540f131ea66d67d</u></p>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <h2>Design model classes</h2>
+        <img class="img-responsive" src="~/assets/DesignModelClasses.png" alt="">
+    </div>
+</div>

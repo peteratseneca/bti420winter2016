@@ -1,0 +1,58 @@
+﻿@model PhotoEntity.Models.AccountDetails
+
+@{
+    ViewBag.Title = "Account details";
+}
+
+<h2>Account details</h2>
+
+<div>
+    @*<h4>AccountDetails</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaimsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaimsName)
+        </dd>
+
+        <dt>
+            Friendly name
+        </dt>
+
+        <dd>
+            @string.Format("{0} {1}", Model.ClaimsGivenName, Model.ClaimsSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaimsEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaimsEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaimsRoles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaimsRoles)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
