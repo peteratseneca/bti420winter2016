@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SearchMusic.Controllers.TrackBase>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<p>&nbsp;</p>
+<h4>Search results</h4>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbumTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbumArtistName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MediaTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Composer)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlbumTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlbumArtistName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MediaTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GenreName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Composer)
+        </td>
+    </tr>
+}
+
+</table>
