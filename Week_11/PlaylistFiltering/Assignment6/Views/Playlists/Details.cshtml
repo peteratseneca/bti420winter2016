@@ -1,0 +1,74 @@
+﻿@model Assignment6.Controllers.PlaylistWithDetails
+
+@{
+    ViewBag.Title = "Playlist details";
+}
+
+<h2>Playlist details <span class="bg-info">&nbsp;@(Model.Name)&nbsp;</span></h2>
+
+<div>
+    @*<h4>PlaylistWithDetails</h4>*@
+    <hr />
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PlaylistId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt></dt>
+        <dd>&nbsp;</dd>
+
+        <dt>
+            Tracks now on the playlist <span class="badge">@Model.TracksCount</span>
+        </dt>
+
+        <dd>
+            @*@{
+                // Sort by name
+                var tracks = Model.Tracks.OrderBy(t => t.Name);
+                // What's one-third of the number of tracks?
+                var third = tracks.Count() / 3;
+                if (third < 1) { third = 3; }
+                // Create three separate collections
+                var col1 = tracks.Take(third);
+                var col2 = tracks.Skip(third).Take(third);
+                var col3 = tracks.Skip(third).Skip(third);
+            }
+            <div class="col-md-3">
+                @foreach (var t in col1)
+                {
+                    <p>@t.Name</p>
+                }
+            </div>
+            <div class="col-md-3">
+                @foreach (var t in col2)
+                {
+                    <p>@t.Name</p>
+                }
+            </div>
+            <div class="col-md-3">
+                @foreach (var t in col3)
+                {
+                    <p>@t.Name</p>
+                }
+            </div>*@
+            @foreach (var t in Model.Tracks.OrderBy(t => t.Name))
+                {
+                    <span>@t.Name</span><br />
+                }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlaylistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

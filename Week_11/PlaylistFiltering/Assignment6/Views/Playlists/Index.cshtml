@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Assignment6.Controllers.PlaylistBase>
+
+@{
+    ViewBag.Title = "List of playlists";
+}
+
+<h2>List of playlists</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TracksCount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            <span class="badge">@item.TracksCount</span>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PlaylistId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PlaylistId }) @*|
+            @Html.ActionLink("Delete", "Delete", new { id=item.PlaylistId })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,84 @@
+﻿@model Assignment6.Controllers.PlaylistEditTracksForm
+
+@{
+    ViewBag.Title = "Edit playlist";
+}
+
+<h2>Edit playlist <span class="bg-info">&nbsp;@(Model.Name)&nbsp;</span></h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Select tracks, and click the "Save changes" button</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.PlaylistId)
+
+        <div class="form-group">
+            <!-- removed this from the next div - col-md-offset-2 -->
+            <div class="col-md-10">
+                <input type="submit" value="Save changes" class="btn btn-default" />&nbsp;
+                @Html.ActionLink("Back to Details", "Details", new { id = Model.PlaylistId }) |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <script src="~/Scripts/App/core.js"></script>
+
+                <h4>Filter by genre</h4>
+                <!-- render a checkbox group -->
+                <div class="row">
+                    @foreach (var item in Model.GenreList)
+                    {
+                        <div class="checkbox col-md-3">
+                            <label><input type="checkbox" name="Genres" value="@item.GenreId" onchange="toggleGenre('g' + '@item.GenreId', this.checked);" />@item.Name</label>
+                        </div>
+                    }
+                </div>
+                <p>&nbsp;</p>
+
+                <h4>Track names</h4>
+                <!-- render a checkbox group -->
+                @foreach (var item in Model.TrackList)
+                {
+                    <div class="checkbox g@(item.GenreId)" style="display: none;">
+                        <label><input type="checkbox" name="TrackIds" value="@item.TrackId" checked="@item.Selected" />@item.NameFull</label>
+                    </div>
+                }
+            </div>
+
+            <div class="col-md-4 well">
+                <h4>Now on playlist <span class="badge">@Model.TracksNowOnPlaylist.Count()</span></h4>
+                @foreach (var t in Model.TracksNowOnPlaylist)
+                {
+                    <p>@t.Name</p>
+                }
+            </div>
+        </div>
+
+        <hr />
+        <div class="form-group">
+            <!-- removed this from the next div - col-md-offset-2 -->
+            <div class="col-md-10">
+                <input type="submit" value="Save changes" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Details", "Details", new { id = Model.PlaylistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
