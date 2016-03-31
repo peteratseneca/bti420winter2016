@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Data";
+}
+
+<h2>Data delivered by Ajax + web service</h2>
+
+<h4>Click a button to fetch and display data</h4>
+
+<script src="~/Scripts/App/core.js"></script>
+<hr>
+<div>
+    <p>
+        <input class="btn btn-info" type="button" value="Artists" onclick="fetchData('/api/deliverdata/artists')">&nbsp;
+        <input class="btn btn-info" type="button" value="Albums" onclick="fetchData('/api/deliverdata/albums')">&nbsp;
+        <input class="btn btn-info" type="button" value="Tracks" onclick="fetchData('/api/deliverdata/tracks')">&nbsp;
+        <a class="btn btn-danger" href="/home/data">Clear</a>&nbsp;
+        <span id="status"></span>
+    </p>
+</div>
+
+<div id="content"></div>

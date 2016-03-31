@@ -27,3 +27,11 @@ Implements the classic hierarchical selection pattern, with cascading dropdown l
 Features:
 - Ajax
 - Cascading item-selection elements, which appear after user interaction
+
+**AjaxWithWebService**
+
+Uses a web service to fetch and process data (plain-text JSON).  
+
+Features:
+- New ApiController added to the project
+- JavaScript functions request data, parse it as JSON, and render it in an HTML table
