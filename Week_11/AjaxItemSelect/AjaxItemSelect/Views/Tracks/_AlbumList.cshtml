@@ -1,0 +1,9 @@
+﻿@model AjaxItemSelect.Controllers.AlbumForm
+
+<hr>
+<div class="form-group">
+    <label class="control-label col-md-2" for="AlbumId">Select an Album</label>
+    <div class="col-md-10">
+        @Html.DropDownList("AlbumId", Model.AlbumList, new { @class = "form-control", @size = "4", @onchange = "albumSelected(this)" })
+    </div>
+</div>

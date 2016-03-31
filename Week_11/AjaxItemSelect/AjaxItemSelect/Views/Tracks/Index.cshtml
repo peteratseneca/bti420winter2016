@@ -1,0 +1,41 @@
+﻿@model AjaxItemSelect.Controllers.ArtistForm
+
+@{
+    ViewBag.Title = "Cascading";
+}
+
+<h2>Cascading item-selectors</h2>
+<h4>Select items, and click the Send button</h4>
+<hr>
+
+<script src="~/Scripts/App/core.js"></script>
+
+@using (Html.BeginForm(actionName: "DoSomething", controllerName: "Tracks"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <div id="task1">
+            <div class="form-group">
+                <label class="control-label col-md-2" for="ArtistId">Select an artist</label>
+                <div class="col-md-10">
+                    @Html.DropDownList("ArtistId", Model.ArtistList, new { @class = "form-control", @size = "10", @onchange = "artistSelected(this)", @autofocus = "autofocus" })
+                </div>
+            </div>
+        </div>
+
+        <div id="task2"></div>
+
+        <div id="task3"></div>
+
+        <hr>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="sendButton" type="submit" value="Send" class="btn btn-default" disabled="disabled" />
+            </div>
+        </div>
+
+    </div>
+
+}

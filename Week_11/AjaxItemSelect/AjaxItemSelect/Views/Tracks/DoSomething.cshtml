@@ -1,0 +1,48 @@
+﻿@model AjaxItemSelect.Controllers.SelectedDataText
+
+@{
+    ViewBag.Title = "User-selected data";
+}
+
+<h2>User-selected data</h2>
+
+<div>
+    <h4>The browser user selected these items:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtistName)
+            <hr>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumTitle)
+            <hr>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrackNames)
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.TrackNames)
+            {
+                <p>@item</p>
+            }
+        </dd>
+
+    </dl>
+</div>
+<hr>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

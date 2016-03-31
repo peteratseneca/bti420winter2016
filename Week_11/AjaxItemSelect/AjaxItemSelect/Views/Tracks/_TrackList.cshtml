@@ -1,0 +1,10 @@
+﻿@model AjaxItemSelect.Controllers.TrackForm
+
+<hr>
+<div class="form-group">
+    <label class="control-label col-md-2" for="TrackIds">Select Track(s)</label>
+    <div class="col-md-10">
+        @Html.ListBox("TrackIds", Model.TrackList, new { @class = "form-control", @size = "10" })
+    </div>
+</div>
+

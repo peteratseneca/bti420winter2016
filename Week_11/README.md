@@ -19,3 +19,11 @@ Search for music tracks with a search string.
 
 Features:
 - Ajax
+
+**AjaxItemSelect**
+
+Implements the classic hierarchical selection pattern, with cascading dropdown lists.  
+
+Features:
+- Ajax
+- Cascading item-selection elements, which appear after user interaction
