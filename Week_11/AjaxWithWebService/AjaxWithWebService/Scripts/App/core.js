@@ -53,6 +53,8 @@ function fetchData(url) {
 
     // configure the xhr object to fetch content
     xhr.open('get', url, true);
+    // set the request header
+    xhr.setRequestHeader('accept', 'application/json');
     // fetch the content
     xhr.send(null);
 }
