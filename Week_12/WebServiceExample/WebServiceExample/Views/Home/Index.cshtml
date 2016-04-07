@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Web service example</h1>
+    <p class="lead">Delivers some data from the Chinook sample database.</p>
+    <p><a href="http://petermcintyre.com/bti420/notes/apr08-apr11/" target="_blank" class="btn btn-primary btn-lg">More info &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>About this app</h2>
+        <p>This is a simple web service example app.</p>
+        <p>It supports read-only delivery of data, and does not support adds or changes.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Using this app</h2>
+        <p>Load and run the app. It will listen for requests from <em>other</em> apps.</p>
+        <p>The URL to this web service, when running on localhost, is:</p>
+        <p><code>http://localhost:36431/</code></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Resource URLs</h2>
+        <p>The following resource URLs are supported. Replace "xxx" with an integer identifier.</p>
+        <pre>
+        /api/artists
+        /api/artists/withalbums
+        /api/artists/xxx
+        /api/artists/xxx/withalbums
+        /api/employees
+        /api/employees/xxx
+        /api/employees/xxx/withdetails
+        </pre>
+    </div>
+</div>

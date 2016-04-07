@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Not found";
+}
+
+<h2>Requested resource was not found</h2>
+<p>The requested resource was not found.</p>
+<p>Please use the web site navigation links to request another resource.</p>
+<p>&nbsp;</p>
+<p>Technical information: HTTP @ViewBag.StatusCode</p>
+<p>The requested resource was: @Request.Url.PathAndQuery</p>

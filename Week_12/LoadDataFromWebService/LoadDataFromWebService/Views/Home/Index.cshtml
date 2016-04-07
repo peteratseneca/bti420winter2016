@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Load data from web service</h1>
+    <p class="lead">Server-side calls to a web service.</p>
+    <p><a href="http://petermcintyre.com/bti420/notes/apr08-apr11/" target="_blank" class="btn btn-primary btn-lg">More info &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>Before continuing, make sure that the "WebServiceExample" app is running.</p>
+        <p><u>This</u> web app calls into the web service, which delivers data on artists and employees.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>About this app</h2>
+        <p>The view model classes from the WebServiceExample project were copied into this app.</p>
+        <p>Study the code identified by the Attention comment tokens.</p>
+        <p>When calling a web service, you should use the async-await pattern:</p>
+        <ul>
+            <li>An async method includes the "async" keyword</li>
+            <li>Its return type is wrapped in a Task&lt;T&gt;</li>
+            <li>When calling an async method, prefix it with the "await" keyword</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Artist list</title>
+    <meta charset="utf-8" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Load data from a web service</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Artists">Artists</a></li>
+                    <li><a href="/ArtistsHTML5Page.html">Artists (using HTML5 page)</a></li>
+                    <li><a href="/Employees">Employees</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+        <h2>Artist list</h2>
+        <h4 class="text-danger">Fetched using JavaScript in the browser</h4>
+
+        <script src="/Scripts/App/FetchFromBrowser.js"></script>
+        <hr>
+
+        <div>
+            <p>
+                <input class="btn btn-info" type="button" value="Artists" onclick="fetchData('http://localhost:36431/api/artists')">&nbsp;
+                <a class="btn btn-danger" href="/ArtistsHTML5Page.html">Clear</a>&nbsp;
+                <span id="status"></span>
+            </p>
+        </div>
+
+        <div id="content"></div>
+
+        <hr />
+
+        <footer>
+            <p>&copy; 2016 - BTI420 and INT422 Faculty</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

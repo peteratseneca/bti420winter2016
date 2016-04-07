@@ -1,0 +1,46 @@
+﻿@model LoadDataFromWebService.Controllers.ArtistWithAlbums
+
+@{
+    ViewBag.Title = "Artist details";
+}
+
+<h2>Artist details - @Model.Name</h2>
+
+<div>
+    @*<h4>ArtistWithAlbums</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+            <hr>
+        </dd>
+
+        <dt>
+            Albums
+        </dt>
+
+        <dd>
+            @if (Model.Albums.Count() == 0)
+            {
+                <span>(none)</span>
+            }
+            else
+            {
+                foreach (var item in Model.Albums)
+                {
+                    <span>@item.Title</span><br>
+                }
+            }
+        </dd>
+
+    </dl>
+    <hr>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ArtistId }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

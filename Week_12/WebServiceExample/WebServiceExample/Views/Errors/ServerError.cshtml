@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Request-handling error";
+}
+
+<h2>There was an error handling your request</h2>
+<p>The server encountered an error during the handling of your request.</p>
+<p>The error may have been a one-time occurence, or it may be the result of a more serious situation. In either case, our web site managers have been notified.</p>
+<p><a href="@Request.Url.PathAndQuery">Click here to try your request again</a></p>
+<p>&nbsp;</p>
+
+<p title="@ViewBag.Prompt @ViewBag.Error @ViewBag.ErrorDetail">Technical information: HTTP @ViewBag.StatusCode</p>
+<p>The requested resource was: @Request.Url.PathAndQuery</p>
+<p>&nbsp;</p>
+@if (Request.IsLocal)
+{
+    <h4>@ViewBag.Prompt</h4>
+    <p>@ViewBag.Error</p>
+    <p>@ViewBag.ErrorDetail</p>
+}
